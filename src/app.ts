@@ -1,4 +1,4 @@
-import * as bodyParser from "body-parser";
+import bodyParser from "body-parser";
 import express from "express";
 
 class App {
@@ -23,6 +23,7 @@ class App {
 
   private initializeMiddlewares() {
     this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded({ extended: false }));
   }
 
   private initializeControllers(controllers: any[]) {

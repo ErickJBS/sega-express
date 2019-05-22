@@ -18,6 +18,8 @@ class DatabaseController {
   public async getStudent(request: express.Request, response: express.Response) {
     let connection;
     try {
+      // tslint:disable-next-line:no-console
+      console.log(request);
       connection = await oracledb.getConnection(environment.databaseConfig);
       const result = await connection.execute(
         "select * from estudiantes where matricula = :id", ["a311008"]
