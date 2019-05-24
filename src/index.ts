@@ -6,7 +6,7 @@ const port = 8000; // default port to listen
 
 const app = new App([
     DatabaseController,
-    AuthController
+    AuthController,
   ], port);
 
 app.listen();
